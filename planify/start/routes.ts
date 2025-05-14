@@ -8,9 +8,15 @@
 */
 
 import router from '@adonisjs/core/services/router'
+import { middleware } from './kernel.js'
 
-// import { get } from 'http'
 
-router.on('/').render('pages/home')
 
-router.get('/signup', 'UsersController.showSignupForm')
+
+router.get('/login', '#controllers/users_controller.showLoginForm')
+router.get('/signup', '#controllers/users_controller.showSignupForm')
+
+router.group(() => {
+
+  router.on('/').render('pages/home')
+}).use(middleware.auth())
