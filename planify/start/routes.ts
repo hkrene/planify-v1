@@ -16,6 +16,8 @@ import { middleware } from './kernel.js'
 router.get('/login', '#controllers/users_controller.showLoginForm')
 router.get('/signup', '#controllers/users_controller.showSignupForm')
 
+router.post('/signUpUser', '#controllers/users_controller.create')
+
 router.group(() => {
 
   router.on('/').render('pages/home')
