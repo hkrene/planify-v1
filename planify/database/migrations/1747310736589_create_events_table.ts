@@ -16,7 +16,36 @@ export default class extends BaseSchema {
       table.date('end_date').notNullable
       table.string('location').notNullable
       table.string('description').notNullable
-
+INSERT INTO events (
+    id,
+    user_id,
+    category,
+    image,
+    title,
+    begin_time,
+    end_time,
+    begin_date,
+    end_date,
+    location,
+    description,
+    created_at,
+    updated_at
+  )
+VALUES (
+    id:integer,
+    user_id:integer,
+    'category:character varying',
+    'image:character varying',
+    'title:character varying',
+    'begin_time:character varying',
+    'end_time:character varying',
+    'begin_date:date',
+    'end_date:date',
+    'location:character varying',
+    'description:character varying',
+    'created_at:timestamp with time zone',
+    'updated_at:timestamp with time zone'
+  );
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })
