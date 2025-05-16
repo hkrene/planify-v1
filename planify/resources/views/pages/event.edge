@@ -13,10 +13,17 @@
         {{ csrfField() }}
         <input type="file" name="file" id="" placeholder="Upload image">
         <input type="text" name="category" placeholder="Enter the category...">
+        <select name=category">
+            <option value="">--Please choose a Category--</option>
+            <option value="sport">Sport</option>
+            <option value="health">Health</option>
+            <option value="comedy">comedy</option>
+            <option value="training">training</option>
+          </select>
         <input type="text name="title" placeholder="Enter Title">
         <input type="text" name="description" >
-        <input type="datetime" name="beginTime" >
-        <input type="datetime" name="endTime" >
+        <input type="time" name="beginTime" >
+        <input type="time" name="endTime" >
         <input type="date" name="beginDate" >
         <input type="date" name="endDte" >
         <input type="text" name="location" >
