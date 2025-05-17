@@ -4,12 +4,16 @@ import { createUserValidator } from '#validators/user'
 
 export default class UsersController {
 
-  public async showSignup({ view }: HpttpContext) {
+  public async showSignup({ view }: HttpContext) {
     return view.render('security/signup')
   }
 
   public async showLogin({ view }: HttpContext) {
-    return view.render('pages/createEvent')
+    return view.render('security/login')
+  }
+
+  public async show({ view }: HttpContext) {
+    return view.render('pages/event_home')
   }
 
   public async create({ view, request, response, auth }: HttpContext) {
@@ -35,7 +39,7 @@ export default class UsersController {
 
     await auth.use('web').login(user)
 
-    response.redirect('/eventHome')
+    return response.redirect('/')
 
   }
 }
