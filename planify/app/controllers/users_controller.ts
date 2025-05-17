@@ -25,7 +25,7 @@ export default class UsersController {
     console.log(user);
     
     return view.render('security/login')
-    
-
   }
+
+  
 }
