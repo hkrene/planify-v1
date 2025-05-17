@@ -5,28 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  
-  <title>Login</title>
+  <title>Event Form</title>
 </head>
-<body>
-    <form action="/event" method="post">
-        {{ csrfField() }}
-        <input type="file" name="file" id="" placeholder="Upload image">
-        <input type="text" name="category" placeholder="Enter the category...">
-        <select name=category">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+  <form action="/event" method="post" class="bg-white p-8 rounded-lg shadow-md w-full max-w-7xl space-y-6">
+    {{ csrfField() }}
+
+    <!-- Image Display -->
+    <div class="w-full flex justify-center mb-6">
+      <img src="{{ asset('images/SOL.png') }}" alt="Event Banner" class="w-full max-h-72 object-cover rounded-lg">
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="space-y-4">
+        <div>
+          <label for="file" class="block text-sm font-medium text-gray-700 mb-1">Upload Image</label>
+          <input type="file" name="file" id="file" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+          <input type="text" name="category" id="category" placeholder="Enter the category..." class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label for="category-select" class="block text-sm font-medium text-gray-700 mb-1">Choose a Category</label>
+          <select name="category" id="category-select" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="">--Please choose a Category--</option>
             <option value="sport">Sport</option>
             <option value="health">Health</option>
-            <option value="comedy">comedy</option>
-            <option value="training">training</option>
+            <option value="comedy">Comedy</option>
+            <option value="training">Training</option>
+            <option value="doods">Doods</option>
           </select>
-        <input type="text name="title" placeholder="Enter Title">
-        <input type="text" name="description" >
-        <input type="time" name="beginTime" >
-        <input type="time" name="endTime" >
-        <input type="date" name="beginDate" >
-        <input type="date" name="endDte" >
-        <input type="text" name="location" >
-    </form>
+        </div>
+
+        <div>
+          <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+          <input type="text" name="title" id="title" placeholder="Enter Title" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Location</label>
+          <input type="text" name="location" id="location" placeholder="Enter Location" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+          <input type="text" name="description" id="description" placeholder="Enter Description" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="beginTime" class="block text-sm font-medium text-gray-700 mb-1">Begin Time</label>
+            <input type="time" name="beginTime" id="beginTime" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <div>
+            <label for="endTime" class="block text-sm font-medium text-gray-700 mb-1">End Time</label>
+            <input type="time" name="endTime" id="endTime" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="beginDate" class="block text-sm font-medium text-gray-700 mb-1">Begin Date</label>
+            <input type="date" name="beginDate" id="beginDate" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <div>
+            <label for="endDate" class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+            <input type="date" name="endDte" id="endDate" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-end mt-6">
+      <button type="submit" class="bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        Submit
+      </button>
+    </div>
+  </form>
 </body>
 </html>

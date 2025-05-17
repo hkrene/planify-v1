@@ -18,6 +18,7 @@ router.get('/signup', '#controllers/users_controller.showSignup')
 
 router.post('/signUpUser', '#controllers/users_controller.create')
 router.get('/event','#controllers/events_controller.showEvent')
+
 router.group(() => {
 
   router.on('/').render('pages/home')

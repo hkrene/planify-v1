@@ -9,7 +9,7 @@ export default class UsersController {
   }
 
   public async showLogin({ view }: HttpContext) {
-    return view.render('security/login')
+    return view.render('pages/event')
   }
 
   public async create({ view, request, response, auth }: HttpContext) {
