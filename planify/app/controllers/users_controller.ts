@@ -4,11 +4,11 @@ import { createUserValidator } from '#validators/user'
 
 export default class UsersController {
 
-  public async showSignupForm({ view }: HttpContext) {
+  public async showSignup({ view }: HpttpContext) {
     return view.render('security/signup')
   }
 
-  public async showLoginForm({ view }: HttpContext) {
+  public async showLogin({ view }: HttpContext) {
     return view.render('security/login')
   }
 
@@ -27,5 +27,5 @@ export default class UsersController {
     return view.render('security/login')
   }
 
-  
+
 }

@@ -13,8 +13,8 @@ import { middleware } from './kernel.js'
 
 
 
-router.get('/login', '#controllers/users_controller.showLoginForm')
-router.get('/signup', '#controllers/users_controller.showSignupForm')
+router.get('/login', '#controllers/users_controller.showLogin')
+router.get('/signup', '#controllers/users_controller.showSignup')
 
 router.post('/signUpUser', '#controllers/users_controller.create')
 router.get('/event','#controllers/events_controller.showEvent')
